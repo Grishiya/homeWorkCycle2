@@ -3,6 +3,7 @@ public class Main {
         task1();
         task2();
         task3();
+
     }
 
     public static void task1() {
@@ -44,6 +45,6 @@ public class Main {
             contryY = contryY + totalLifePeopleYear;
             System.out.println("Год " + i + " численность населения составляет " + contryY);
         }
-        System.out.println( );
     }
+
 }
