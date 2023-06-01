@@ -3,7 +3,8 @@ public class Main {
         task1();
         task2();
         task3();
-
+        task4();
+        task5();
     }
 
     public static void task1() {
@@ -44,6 +45,32 @@ public class Main {
         for (int i = 1; i <= 10; i++) {
             contryY = contryY + totalLifePeopleYear;
             System.out.println("Год " + i + " численность населения составляет " + contryY);
+        }
+    }
+
+    public static void task4() {
+        System.out.println("Задача 4.");
+        double money = 15000.0;
+        double vklad = 15000.0;
+        double percent = money / 93;
+        for (int month = 1; vklad <= 1200000; month++) {
+            vklad = vklad + percent;
+            vklad = (int) (vklad);
+            System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
+        }
+    }
+
+    public static void task5() {
+        System.out.println("Задача 5");
+        double money = 15000.0;
+        double vklad = 15000.0;
+        double percent = money / 93;
+        for (int month = 1; vklad <= 1200000; month++) {
+            vklad = vklad + percent;
+            vklad = (int) (vklad);
+            if (month % 6 == 0) {
+                System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
+            }
         }
     }
 
