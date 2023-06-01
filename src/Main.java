@@ -82,7 +82,7 @@ public class Main {
             vklad = vklad *percent+vklad;
             vklad = (int) (vklad);
             if (month % 6 == 0) {
-                System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
+                System.out.println(month + " месяц,денег на счете" + vklad + "рублей");
                 if (month == nineYear) break;
             }
         }
