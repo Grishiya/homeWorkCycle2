@@ -78,7 +78,7 @@ public class Main {
         int nineYear = 12 * 9;
         double vklad = 15000;
         double percent = money / 93;
-        for (int month = 1; vklad <= 1200000; month++) {
+        for (int month = 1; ; month++) {
             vklad = vklad *percent+vklad;
             vklad = (int) (vklad);
             if (month % 6 == 0) {
