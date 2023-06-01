@@ -11,7 +11,7 @@ public class Main {
     public static void task1() {
         System.out.println("Задача 1.");
         int money = 0;
-        int month = 0;
+        int month = 1;
         int postponed = 15000;
         for (; money <= 2_459_000; month++) {
 
@@ -51,11 +51,10 @@ public class Main {
 
     public static void task4() {
         System.out.println("Задача 4.");
-        double money = 15000.0;
-        double vklad = 15000.0;
-        double percent = money / 93;
-        for (int month = 1; vklad <= 1200000; month++) {
-            vklad = vklad + percent;
+        float vklad = 15000.0f;
+        float percent = 0.07f;
+        for (int month = 0; vklad <= 12000000; month++) {
+            vklad = vklad * percent + vklad;
             vklad = (int) (vklad);
             System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
         }
@@ -63,11 +62,10 @@ public class Main {
 
     public static void task5() {
         System.out.println("Задача 5");
-        double money = 15000.0;
-        double vklad = 15000.0;
-        double percent = money / 93;
-        for (int month = 1; vklad <= 1200000; month++) {
-            vklad = vklad + percent;
+        float vklad = 15000.0f;
+        float percent = 0.07f;
+        for (int month = 0; vklad <= 12000000; month++) {
+            vklad = vklad * percent + vklad;
             vklad = (int) (vklad);
             if (month % 6 == 0) {
                 System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
@@ -81,12 +79,11 @@ public class Main {
         double vklad = 15000;
         double percent = money / 93;
         for (int month = 1; vklad <= 1200000; month++) {
-            vklad = vklad + percent;
+            vklad = vklad *percent+vklad;
             vklad = (int) (vklad);
             if (month % 6 == 0) {
                 System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
-            if (month==nineYear)
-                break;
+                if (month == nineYear) break;
             }
         }
 
