@@ -5,6 +5,7 @@ public class Main {
         task3();
         task4();
         task5();
+        task6();
     }
 
     public static void task1() {
@@ -74,4 +75,20 @@ public class Main {
         }
     }
 
+    public static void task6() {
+        double money = 15000.0;
+        int nineYear = 12 * 9;
+        double vklad = 15000;
+        double percent = money / 93;
+        for (int month = 1; vklad <= 1200000; month++) {
+            vklad = vklad + percent;
+            vklad = (int) (vklad);
+            if (month % 6 == 0) {
+                System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
+            if (month==nineYear)
+                break;
+            }
+        }
+
+    }
 }
