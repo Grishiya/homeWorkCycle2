@@ -55,9 +55,9 @@ public class Main {
         double vklad = 15000.0;
         double percent = 1.07;
         int month = 0;
-        for (; vklad <= 12000000.0; month++) {
+        for (; vklad < 12000000.0; month++) {
             vklad = vklad * percent;
-            System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month, vklad);
+            System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month+1, vklad);
         }
     }
 
@@ -65,10 +65,10 @@ public class Main {
         System.out.println("Задача 5");
         double vklad = 15000.0;
         double percent = 1.07;
-        for (int month = 0; vklad <= 12000000; month++) {
+        for (int month = 0; vklad < 12000000; month++) {
             vklad = vklad * percent;
             if (month % 6 == 0) {
-                System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month, vklad);
+                System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month + 1, vklad);
             }
         }
     }
@@ -77,11 +77,11 @@ public class Main {
         int nineYear = 12 * 9;
         double vklad = 15000;
         double percent = 1.07;
-        for (int month = 1; ; month++) {/* Знаю,что можно сделать так
+        for (int month = 0; ; month++) {/* Знаю,что можно сделать так
         for(int month=1;month<=nineYear;month++) */
             vklad = vklad * percent;
             if (month % 6 == 0) {
-                System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month, vklad);
+                System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month+1, vklad);
                 if (month == nineYear) break;//но хотел попробовать так
             }
         }
