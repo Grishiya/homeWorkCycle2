@@ -6,6 +6,8 @@ public class Main {
         task4();
         task5();
         task6();
+        task7();
+        task8();
     }
 
     public static void task1() {
@@ -51,41 +53,64 @@ public class Main {
 
     public static void task4() {
         System.out.println("Задача 4.");
-        float vklad = 15000.0f;
-        float percent = 0.07f;
-        for (int month = 0; vklad <= 12000000; month++) {
-            vklad = vklad * percent + vklad;
-            vklad = (int) (vklad);
-            System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
+        double vklad = 15000.0;
+        double percent = 1.07;
+        int month = 0;
+        for (; vklad <= 12000000.0; month++) {
+            vklad = vklad * percent;
+            System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month, vklad);
         }
     }
 
     public static void task5() {
         System.out.println("Задача 5");
-        float vklad = 15000.0f;
-        float percent = 0.07f;
+        double vklad = 15000.0;
+        double percent = 1.07;
         for (int month = 0; vklad <= 12000000; month++) {
-            vklad = vklad * percent + vklad;
-            vklad = (int) (vklad);
+            vklad = vklad * percent;
             if (month % 6 == 0) {
-                System.out.println(month + " месяц,денег на счете" + vklad + "рублей.");
+                System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month, vklad);
             }
         }
     }
 
     public static void task6() {
-        double money = 15000.0;
         int nineYear = 12 * 9;
         double vklad = 15000;
-        double percent = money / 93;
-        for (int month = 1; ; month++) {
-            vklad = vklad *percent+vklad;
-            vklad = (int) (vklad);
+        double percent = 1.07;
+        for (int month = 1; ; month++) {/* Знаю,что можно сделать так
+        for(int month=1;month<=nineYear;month++) */
+            vklad = vklad * percent;
             if (month % 6 == 0) {
-                System.out.println(month + " месяц,денег на счете" + vklad + "рублей");
-                if (month == nineYear) break;
+                System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month, vklad);
+                if (month == nineYear) break;//но хотел попробовать так
+            }
+        }
+    }
+
+    public static void task7() {
+        System.out.println("Задача 7.");
+        int firstFriday = 3;
+        int dayInWeek = 7;
+        int dayInMonth = 31;
+        System.out.println("Сегодня пятница" + firstFriday + "-е число. Не забудтье подготовить отчет.");
+        for (int i = 0; firstFriday < dayInMonth; i++) {
+            firstFriday = firstFriday + dayInWeek;
+            System.out.println("Сегодня пятница" + firstFriday + "-е число. Не забудтье подготовить отчет.");
+        }
+    }
+
+    public static void task8() {
+        int nowYear = 2023;
+        int twoHundredYearsAgo = 1823;
+        int oneHundredAfterYears = 2123;
+        int comet = 79;
+        for (int cometYear = 0; cometYear < oneHundredAfterYears; cometYear = nowYear + comet) {
+            if (cometYear > twoHundredYearsAgo) {
+                System.out.println(cometYear);
             }
         }
 
     }
+
 }
