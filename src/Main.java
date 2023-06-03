@@ -42,11 +42,10 @@ public class Main {
         int birthRate = 17;
         int mortality = 8;
         int lifePeopleOn1000 = birthRate - mortality;
-        int thousandsPeopleCountryY = contryY / 1000;
-        int totalLifePeopleYear = thousandsPeopleCountryY * lifePeopleOn1000;
+
 
         for (int i = 1; i <= 10; i++) {
-            contryY = contryY + totalLifePeopleYear;
+            contryY = contryY + (contryY / 1000 * lifePeopleOn1000);
             System.out.println("Год " + i + " численность населения составляет " + contryY);
         }
     }
@@ -93,24 +92,19 @@ public class Main {
         int firstFriday = 3;
         int dayInWeek = 7;
         int dayInMonth = 31;
-        System.out.println("Сегодня пятница" + firstFriday + "-е число. Не забудтье подготовить отчет.");
-        for (int i = 0; firstFriday < dayInMonth; i++) {
-            firstFriday = firstFriday + dayInWeek;
+        for (; firstFriday < dayInMonth; firstFriday += dayInWeek) {
             System.out.println("Сегодня пятница" + firstFriday + "-е число. Не забудтье подготовить отчет.");
         }
     }
 
     public static void task8() {
         int nowYear = 2023;
-        int twoHundredYearsAgo = 1823;
-        int oneHundredAfterYears = 2123;
+        int twoHundredYearsAgo = nowYear - 200;
+        int oneHundredAfterYears = nowYear + 100;
         int comet = 79;
-        for (int cometYear = 0; cometYear < oneHundredAfterYears; cometYear = nowYear + comet) {
-            if (cometYear > twoHundredYearsAgo) {
-                System.out.println(cometYear);
-            }
+        for (int year = 0; year <= oneHundredAfterYears; year += comet) {
+            if (year > twoHundredYearsAgo)
+                System.out.println(year);
         }
-
     }
-
 }
