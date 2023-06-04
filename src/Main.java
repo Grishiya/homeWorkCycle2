@@ -14,8 +14,9 @@ public class Main {
         System.out.println("Задача 1.");
         int money = 0;
         int month = 1;
+        int ambition=2_459_000;
         int postponed = 15000;
-        for (; money <= 2_459_000; month++) {
+        for (; money <= ambition; month++) {
 
             money = money + postponed;
             System.out.println("Месяц " + month + " сумма накоплений равна " + money + ".");
@@ -53,10 +54,11 @@ public class Main {
     public static void task4() {
         System.out.println("Задача 4.");
         double vklad = 15000.0;
-        double percent = 1.07;
+        double percent =7;
+        int ambition=12_000_000;
         int month = 0;
-        for (; vklad < 12000000.0; month++) {
-            vklad = vklad * percent;
+        for (; vklad < ambition; month++) {
+            vklad = vklad * (1+percent/100);
             System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month+1, vklad);
         }
     }
@@ -64,9 +66,10 @@ public class Main {
     public static void task5() {
         System.out.println("Задача 5");
         double vklad = 15000.0;
-        double percent = 1.07;
-        for (int month = 0; vklad < 12000000; month++) {
-            vklad = vklad * percent;
+        double percent = 7;
+        int ambition=12_000_000;
+        for (int month = 0; vklad < ambition; month++) {
+            vklad = vklad * (1+percent/100);
             if (month % 6 == 0) {
                 System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month + 1, vklad);
             }
@@ -74,15 +77,15 @@ public class Main {
     }
 
     public static void task6() {
+        System.out.println("Задача 6");
         int nineYear = 12 * 9;
         double vklad = 15000;
-        double percent = 1.07;
-        for (int month = 0; ; month++) {/* Знаю,что можно сделать так
-        for(int month=1;month<=nineYear;month++) */
-            vklad = vklad * percent;
+        double percent =7;
+        for(int month =0;month<=nineYear;month++){
+            vklad = vklad * (1+percent/100);
             if (month % 6 == 0) {
                 System.out.printf("Месяц %d: денег на счете %.2f рублей %n", month+1, vklad);
-                if (month == nineYear) break;//но хотел попробовать так
+                //if (month == nineYear) break;//но хотел попробовать так
             }
         }
     }
